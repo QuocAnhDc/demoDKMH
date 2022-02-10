@@ -54,8 +54,15 @@ public class SubjectController {
     public String deleteSubject(@PathVariable (value = "id") long id) {
 
         // call delete employee method
-        this.subjectService.deleteSubjectById(id);
-        return "redirect:/editsubject";
+//        this.subjectService.deleteSubjectById(id);
+//        return "redirect:/editsubject";
+        try{
+            this.subjectService.deleteSubjectById(id);
+            return "redirect:/editsubject";
+        }
+        catch (Exception e){
+            return "redirect:/editsubject?error";
+        }
     }
 
 
