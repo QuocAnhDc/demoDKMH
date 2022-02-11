@@ -54,9 +54,11 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                         "/deleteSubject/**",
                         "/js/**",
                         "/css/**",
-                        "/img/**").hasAnyAuthority("ROLE_ADMIN")
+                        "/img/**",
+                        "/error").hasAnyAuthority("ROLE_ADMIN")
                 .antMatchers("/show/**",
-                        "/deleteSubject/**").hasAnyAuthority("ROLE_USER")
+                        "/deleteSubject/**",
+                        "/error").hasAnyAuthority("ROLE_USER")
                 .anyRequest().authenticated()
                 .and()
                 .formLogin().loginPage("/login")

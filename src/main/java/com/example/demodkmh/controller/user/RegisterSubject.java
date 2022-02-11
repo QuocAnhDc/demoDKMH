@@ -29,7 +29,7 @@ public class RegisterSubject {
             return "index";
         }
         catch (Exception e){
-            return "403";
+            return "error";
         }
     }
     @GetMapping("/show/{email}")
