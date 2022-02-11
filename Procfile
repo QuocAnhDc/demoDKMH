@@ -1,1 +1,1 @@
-web: java $JAVA_OPTS -D server.port=$PORT -jar target/*.jar
+web: java -jar target/demoDKMH-0.0.1-SNAPSHOT.jar
