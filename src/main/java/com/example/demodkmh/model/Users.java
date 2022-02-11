@@ -5,7 +5,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 @Entity
-@Table(name =  "user", uniqueConstraints = @UniqueConstraint(columnNames = "email"))
+@Table(name =  "users")
 public class Users {
 	
 	@Id
@@ -17,7 +17,8 @@ public class Users {
 	
 	@Column(name = "last_name")
 	private String lastName;
-	
+
+	@Column(name = "email",unique = true)
 	private String email;
 	
 	private String password;

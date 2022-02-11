@@ -3,13 +3,13 @@ package com.example.demodkmh.model;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "subject",uniqueConstraints = @UniqueConstraint(columnNames = "name"))
+@Table(name = "subject")
 public class Subjects {
 
     @Id
     @GeneratedValue(strategy =  GenerationType.IDENTITY)
     private Long id;
-    @Column(name = "name")
+    @Column(name = "name",unique = true)
     private String name;
 
     public Subjects() {
