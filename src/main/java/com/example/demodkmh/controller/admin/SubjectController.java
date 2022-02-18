@@ -23,7 +23,6 @@ public class SubjectController {
 
     @GetMapping("/showNewSubjectForm")
     public String showNewSubjectForm(Model model) {
-        // create model attribute to bind form data
         Subjects subject = new Subjects();
         model.addAttribute("subject", subject);
         return "new_subject";
@@ -31,7 +30,6 @@ public class SubjectController {
 
     @PostMapping("/saveSubject")
     public String saveSubject(@ModelAttribute("subject") Subjects subjects) {
-        // save employee to database
         try{
             subjectService.saveSubject(subjects);
             return "redirect:/editsubject";
@@ -52,10 +50,6 @@ public class SubjectController {
 
     @GetMapping("/deleteSubject/{id}")
     public String deleteSubject(@PathVariable (value = "id") long id) {
-
-        // call delete employee method
-//        this.subjectService.deleteSubjectById(id);
-//        return "redirect:/editsubject";
         try{
             this.subjectService.deleteSubjectById(id);
             return "redirect:/editsubject";
@@ -64,7 +58,6 @@ public class SubjectController {
             return "redirect:/editsubject?error";
         }
     }
-
 
     @GetMapping("/page/{pageNo}")
     public String findPaginated(@PathVariable (value = "pageNo") int pageNo,
